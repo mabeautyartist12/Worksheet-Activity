@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#d3b0e8" />
+  <title>WORKSHEET ACTIVITY</title>
+  <style>
+  :root{--brand:#d3b0e8;--brand-dark:#68407d;--brand-deep:#7f4b98;--brand-soft:#f6effa;--ink:#2f2934;--muted:#756b7d;--line:#e5d9eb;--white:#fff;--shadow:0 10px 30px rgba(104,64,125,.10);--radius:18px}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#faf7fc;color:var(--ink)}button,input,select{font:inherit}.app{min-height:100vh;display:flex;flex-direction:column}
+  header{background:var(--brand);border-bottom:1px solid rgba(104,64,125,.16)}.header-inner{max-width:920px;margin:auto;padding:14px 18px;display:flex;align-items:center;gap:13px}.logo{width:52px;height:52px;object-fit:cover;border-radius:15px;background:#fff}.brand-name{font-weight:900;font-size:20px;color:#4e2c60;letter-spacing:.01em}.brand-sub{font-size:12px;color:#5f426c;margin-top:2px}
+  main{width:min(760px,calc(100% - 24px));margin:24px auto 40px;flex:1}.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}.card h1{font-size:23px;margin:0;color:var(--brand-dark)}.card h2{font-size:18px;margin:0 0 5px}.desc{color:var(--muted);font-size:13px;line-height:1.55;margin:0 0 20px}.section-title{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--brand-deep);font-weight:900;margin:5px 0 14px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}label{display:block;font-size:14px;font-weight:800;margin:0 0 7px;color:#493e50}.required{color:var(--brand-deep)}input,select{width:100%;border:1.5px solid #ddcfe4;background:#fff;border-radius:13px;padding:13px 14px;outline:none;color:var(--ink);transition:.2s}input:focus,select:focus{border-color:var(--brand-deep);box-shadow:0 0 0 4px rgba(211,176,232,.35)}.full{grid-column:1/-1}
+  .helper{font-size:11px;color:var(--muted);margin-top:6px}.helper input{margin-top:7px;font-size:14px;padding:11px 12px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.btn{border:0;border-radius:13px;padding:12px 16px;font-weight:900;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--brand-dark);color:#fff;box-shadow:0 7px 18px rgba(104,64,125,.20)}.btn-soft{background:var(--brand-soft);color:var(--brand-dark);border:1px solid var(--line)}.btn-white{background:#fff;color:var(--brand-dark);border:1px solid var(--line)}
+  .output{margin-top:18px}.empty{border:1px dashed #d8c6df;border-radius:15px;padding:24px;text-align:center;background:#fcf9fd;color:var(--muted);font-size:13px}.plan-list{display:grid;gap:9px}.plan-item{display:grid;grid-template-columns:38px 1fr;gap:11px;padding:12px;border:1px solid var(--line);border-radius:14px;background:#fff}.num{width:38px;height:38px;border-radius:11px;background:var(--brand-soft);display:grid;place-items:center;font-weight:900;color:var(--brand-dark)}.plan-title{font-weight:900;font-size:13px}.plan-meta{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4}.approval{margin-top:14px;padding:12px;border-radius:13px;background:var(--brand-soft);color:var(--brand-dark);font-size:12px;line-height:1.5}.prompts{margin-top:16px;display:grid;gap:14px}.prompt-card{border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#fff}.prompt-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 12px;background:#faf5fc;border-bottom:1px solid var(--line)}.prompt-head strong{font-size:12px}.mini{border:1px solid var(--line);background:#fff;color:var(--brand-dark);padding:6px 9px;border-radius:9px;font-size:11px;font-weight:900;cursor:pointer}.prompt-body{white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;line-height:1.55;padding:14px;max-height:420px;overflow:auto}.hidden{display:none!important}footer{text-align:center;border-top:1px solid var(--line);padding:18px 16px;color:var(--muted);font-size:11px;background:#fff}.toast{position:fixed;right:16px;bottom:16px;background:#302733;color:#fff;padding:10px 13px;border-radius:10px;font-size:12px;font-weight:800;opacity:0;transform:translateY(8px);pointer-events:none;transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}
+  @media(max-width:620px){main{width:min(100% - 16px,760px);margin-top:16px}.card{padding:17px}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}.brand-name{font-size:17px}.brand-sub{font-size:10px}.logo{width:48px;height:48px}.actions .btn{width:100%}}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+  <div class="header-inner">
+    <img class="logo" src="https://i.ibb.co.com/0RPDByhV/20260926-112307-0000.png" alt="Logo EVEGROW" />
+    <div><div class="brand-name">WORKSHEET ACTIVITY</div><div class="brand-sub">Generator workbook aktivitas anak</div></div>
+  </div>
+</header>
+
+<main>
+  <section class="card">
+    <div class="form-grid">
+      <div class="full">
+        <label for="theme">1. Tema <span class="required">*</span></label>
+        <input id="theme" placeholder="Contoh: Dinosaurus, Hewan Laut, Luar Angkasa" />
+        <div class="helper">Tema yang ingin dibuat menjadi workbook.</div>
+      </div>
+      <div>
+        <label for="visualStyle">2. Gaya Visual <span class="required">*</span></label>
+        <select id="visualStyle">
+          <option>3D Cartoon Cute</option>
+          <option>3D Cartoon Pastel</option>
+          <option>3D Clay</option>
+          <option>3D Soft Toy</option>
+          <option>Watercolor Storybook</option>
+          <option>Watercolor Pastel</option>
+          <option>Flat Vector Kids</option>
+          <option>Soft Pastel Cartoon</option>
+          <option>Kawaii Cute</option>
+          <option>Hand-drawn Cartoon</option>
+          <option>Hand-drawn Crayon</option>
+          <option>Color Pencil</option>
+          <option>Paper Cut / Paper Craft</option>
+          <option>Felt / Fabric Craft</option>
+          <option>Cute Sticker Style</option>
+          <option>Cute Line Art</option>
+          <option>Children's Comic</option>
+          <option>Playful Doodle</option>
+          <option>Collage Children’s Book</option>
+          <option>Minimal Educational</option>
+          <option>Gaya Sendiri</option>
+        </select>
+        <div id="customStyleWrap" class="helper hidden"><input id="customStyle" placeholder="Contoh: 3D cartoon pastel dengan tekstur lembut" /></div>
+      </div>
+      <div>
+        <label for="age">3. Usia Anak <span class="required">*</span></label>
+        <select id="age">
+          <option>2–3 tahun</option>
+          <option selected>3–4 tahun</option>
+          <option>4–5 tahun</option>
+          <option>5–6 tahun</option>
+          <option>6–7 tahun</option>
+          <option>7+ tahun</option>
+          <option>Isi sendiri</option>
+        </select>
+        <div id="customAgeWrap" class="helper hidden"><input id="customAge" inputmode="decimal" placeholder="Contoh: 3,5 tahun atau 8 tahun" /></div>
+      </div>
+      <div class="full">
+        <label for="pages">4. Jumlah Halaman <span class="required">*</span></label>
+        <input id="pages" type="number" min="3" max="60" value="10" />
+        <div class="helper">Minimal 3 halaman. Halaman 1 = Cover Depan, halaman 2 = Cover Belakang.</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary" id="generatePlan">Buat Rencana Workbook</button>
+      <button class="btn btn-white" id="resetBtn">Reset</button>
+    </div>
+  </section>
+
+  <section class="card output" id="outputCard">
+    <h2>Hasil</h2>
+    <p class="desc">Rencana halaman akan muncul di sini.</p>
+    <div id="emptyState" class="empty">Belum ada hasil.<br><span style="font-size:11px">Isi parameter di atas lalu klik “Buat Rencana Workbook”.</span></div>
+    <div id="planArea" class="hidden">
+      <div id="planList" class="plan-list"></div>
+      <div class="approval">Periksa rencana halaman. Jika sudah sesuai, klik <b>Setuju & Buat Prompt</b>.</div>
+      <div class="actions"><button class="btn btn-primary" id="approveBtn">Setuju & Buat Prompt</button><button class="btn btn-soft" id="downloadPlanBtn">Download Rencana</button></div>
+    </div>
+  </section>
+
+  <section id="promptSection" class="card hidden" style="margin-top:18px">
+    <h2>Prompt Gambar</h2>
+    <p class="desc">Prompt dibuat otomatis berdasarkan template prompt yang Anda berikan.</p>
+    <div class="actions" style="margin-top:0"><button class="btn btn-primary" id="copyAllBtn">Copy Semua</button><button class="btn btn-soft" id="downloadTxtBtn">Download TXT</button><button class="btn btn-soft" id="downloadMdBtn">Download Markdown</button></div>
+    <div id="prompts" class="prompts"></div>
+  </section>
+</main>
+
+<footer>© 2026 WORKSHEET ACTIVITY. Hak cipta dilindungi.</footer>
+<div class="toast" id="toast">Prompt tersalin</div>
+</div>
+<script>
+const $ = id => document.getElementById(id);
+const state = { plan: [], prompts: [] };
+
+const FRONT_TEMPLATE = `Create a premium commercial children's educational workbook
+front cover in A4 portrait format, 210 × 297 mm.
+
+Theme:
+[THEME]
+
+Visual Style:
+[VISUAL STYLE]
+
+Target Age:
+[AGE]
+
+Create a beautiful, polished, child-friendly educational
+workbook cover with a strong commercial publishing
+appearance.
+
+Main Title:
+"[MAIN TITLE]"
+
+Theme Title:
+"[THEME TITLE]"
+
+Create large, bold, rounded, playful typography with
+dimensional depth, clean outline, soft highlights, and
+subtle shadows.
+
+Create one large hero illustration based entirely on
+[THEME].
+
+Feature several recognizable objects, characters, or elements
+that naturally belong to the theme.
+
+Arrange them into one cohesive, attractive scene rather than
+randomly scattering objects.
+
+The main illustration should feel:
+cute, friendly, expressive, polished, premium, and
+appropriate for [AGE].
+
+Use exactly the requested visual style:
+[VISUAL STYLE]
+
+Create a beautiful thematic environment related to [THEME].
+
+Use subtle supporting decorations that naturally belong to
+the theme.
+
+Maintain generous visual breathing space while keeping the
+cover visually attractive.
+
+Color palette:
+Use harmonious, premium, child-friendly colors appropriate
+for [THEME] and [VISUAL STYLE].
+
+Composition:
+- large title in the upper section
+- theme title below the main title
+- large hero illustration in the central area
+- subtle thematic environment toward the lower section
+- balanced composition
+- strong visual hierarchy
+
+Print specification:
+A4 portrait
+210 × 297 mm
+20 mm safe margin
+high resolution
+sharp details
+print-ready
+professional commercial children's workbook quality
+
+The cover must look like part of a professionally designed
+children's educational workbook series.
+
+Do not include:
+page number,
+student name,
+age label,
+class,
+author name,
+fake brand,
+fake publisher,
+fake website,
+fake QR code,
+watermark,
+unrelated objects,
+unnecessary text,
+cropped important elements.`;
+
+const BACK_TEMPLATE = `Create a premium commercial children's educational workbook
+back cover in A4 portrait format, 210 × 297 mm.
+
+Theme:
+[THEME]
+
+Visual Style:
+[VISUAL STYLE]
+
+Target Age:
+[AGE]
+
+Create a back cover that is the direct visual companion of
+the front cover.
+
+Maintain exactly the same:
+- visual identity
+- color palette
+- typography style
+- illustration treatment
+- lighting
+- rendering
+- shadows
+- decorative language
+- overall design language
+
+Main Title:
+"[MAIN TITLE]"
+
+Theme Title:
+"[THEME TITLE]"
+
+Create a beautiful thematic illustration related to [THEME].
+
+Use several recognizable objects, characters, or environmental
+elements from the theme.
+
+Arrange them as one cohesive decorative composition.
+
+The illustration must feel like a continuation of the
+front-cover world.
+
+Do NOT turn the back cover into a worksheet.
+
+Add ONE short general educational description about the
+workbook:
+
+"[SHORT WORKBOOK DESCRIPTION]"
+
+The description should explain the overall learning experience
+and should be appropriate for [AGE].
+
+Do not list individual activities.
+Do not mention Activity 1, Activity 2, or activity numbers.
+
+Create a clean and elegant composition with:
+- title area
+- theme title
+- thematic illustration
+- one short educational description
+- subtle thematic decoration
+- clean lower area
+
+Use a simplified thematic environment related to [THEME].
+
+If publisher information is provided, reserve a clean area for it.
+If publisher information is not provided, keep the area clean.
+
+Print specification:
+A4 portrait
+210 × 297 mm
+20 mm safe margin
+high resolution
+sharp details
+print-ready
+professional commercial children's workbook quality
+
+The back cover must look like a real premium children's
+workbook back cover, not a worksheet page.
+
+Do not include:
+Activity 1,
+Activity 2,
+Activity 3,
+activity numbers,
+activity list,
+worksheet previews,
+exercise examples,
+worksheet instructions,
+answer boxes,
+maze,
+tracing activity,
+matching activity,
+counting activity,
+coloring activity,
+puzzle activity,
+page number,
+student name,
+class,
+fake brand,
+fake publisher,
+fake website,
+fake QR code,
+watermark,
+unrelated objects,
+excessive text.`;
+
+const WORKSHEET_TEMPLATE = `Create a premium children's educational worksheet page
+in A4 portrait format, 210 × 297 mm.
+
+Theme:
+[THEME]
+
+Visual Style:
+[VISUAL STYLE]
+
+Target Age:
+[AGE]
+
+Page:
+[PAGE NUMBER]
+
+Activity:
+[ACTIVITY]
+
+Main Object:
+[MAIN OBJECT]
+
+Learning Goal:
+[LEARNING GOAL]
+
+Activity Title:
+"[ACTIVITY TITLE]"
+
+Instruction:
+"[INSTRUCTION]"
+
+Create one clear main educational activity.
+
+Activity mechanic:
+[DESCRIBE EXACTLY WHAT THE CHILD MUST DO]
+
+Use large, recognizable, child-friendly objects.
+Make the activity immediately understandable to a child.
+
+Provide sufficient space for the required interaction:
+[ACTIVITY INTERACTION]
+
+Maintain generous whitespace and a clean visual hierarchy.
+
+Use the exact same visual identity as the front and back covers.
+
+Illustration style:
+[VISUAL STYLE]
+
+Use:
+- polished rendering
+- clean shapes
+- soft lighting
+- soft shadows
+- friendly expressions
+- consistent proportions
+- premium educational illustration quality
+
+Use a harmonious color palette consistent with the workbook.
+
+Background:
+Create a clean, soft thematic background related to [THEME].
+Use only subtle decorations that support the theme.
+
+Typography:
+- rounded bold title
+- clean readable instruction text
+- clear hierarchy
+- child-friendly typography
+
+Print specification:
+A4 portrait
+210 × 297 mm
+20 mm safe margin
+high resolution
+sharp details
+print-ready
+professional educational workbook quality
+
+The page must look like it belongs to the exact same
+workbook as all other pages.
+
+Do not include:
+watermark,
+logo,
+page number,
+student name,
+class,
+age label,
+author name,
+QR code,
+fake branding,
+unnecessary text,
+unrelated objects,
+cropped elements,
+elements outside the safe margin,
+clutter,
+multiple unrelated activities.`;
+
+const activityData = {
+  "2–3 tahun": [
+    ["Coloring","object utama bertema","motorik halus dan pengenalan objek","Warnai Gambar","Warnai gambar dengan warna favoritmu.","Anak mewarnai satu objek besar dengan area lebar dan outline sangat jelas.","large open coloring area"],
+    ["Matching","pasangan gambar sederhana","pengenalan visual","Pasangkan Gambar","Tarik garis ke gambar yang sama.","Anak menghubungkan 3 pasangan gambar identik yang besar dan sederhana.","wide spacing between matching pairs"],
+    ["Size Comparison","dua objek bertema","mengenal besar dan kecil","Mana yang Lebih Besar?","Lingkari gambar yang lebih besar.","Anak membandingkan dua objek pada setiap set dan melingkari yang lebih besar.","clear room around each answer choice"],
+    ["Sorting","objek bertema sederhana","klasifikasi awal","Kelompokkan Gambar","Kelompokkan gambar yang sejenis.","Anak memindahkan atau menarik garis dari gambar ke dua kelompok sederhana.","two large sorting zones"]
+  ],
+  "3–4 tahun": [
+    ["Matching","objek bertema","diskriminasi visual","Pasangkan yang Sama","Tarik garis ke pasangan yang sama.","Anak mencocokkan 4–5 pasang objek berdasarkan bentuk atau tampilan.","spacious matching columns"],
+    ["Coloring","objek utama bertema","motorik halus","Ayo Mewarnai","Warnai gambar dengan rapi.","Anak mewarnai satu ilustrasi utama beroutline tebal.","large coloring area"],
+    ["Tracing","garis bertema","kontrol pensil","Ikuti Garisnya","Tebalkan garis dari awal sampai akhir.","Anak menebalkan 4 jalur sederhana lurus dan melengkung.","large tracing paths"],
+    ["Counting","sekumpulan objek tema","berhitung 1–5","Hitung Yuk!","Hitung gambar lalu lingkari jawabannya.","Anak menghitung 1–5 objek dan memilih angka yang sesuai.","clear counting groups and answer circles"],
+    ["Maze","karakter dan tujuan bertema","pemecahan masalah sederhana","Temukan Jalannya","Bantu karakter menuju tujuan.","Anak mengikuti satu labirin sangat sederhana dengan jalur lebar.","large simple maze path"],
+    ["Shadow Matching","objek dan siluet","pengenalan bentuk","Cari Bayangannya","Pasangkan gambar dengan bayangannya.","Anak mencocokkan objek dengan siluet yang tepat.","clear object and shadow columns"]
+  ],
+  "4–5 tahun": [
+    ["Matching","objek bertema","diskriminasi visual","Pasangkan yang Tepat","Tarik garis ke pasangan yang tepat.","Anak mencocokkan 5–6 pasangan objek tema berdasarkan bentuk atau detail visual.","balanced two-column matching area"],
+    ["Tracing","jalur dan bentuk bertema","motorik halus dan pra-menulis","Ikuti Jejaknya","Tebalkan garis dari awal sampai akhir.","Anak menebalkan beberapa garis lurus, melengkung, dan zigzag yang terintegrasi dengan tema.","wide tracing paths with clear start and finish"],
+    ["Counting","objek bertema","berhitung dan korespondensi satu-satu","Hitung dan Pilih","Hitung semua gambar lalu pilih angka yang benar.","Anak menghitung kelompok 1–10 objek lalu memilih jawaban angka.","large counting groups and distinct answer options"],
+    ["Maze","karakter dan target tema","perencanaan visual","Cari Jalan Keluar","Bantu karakter menemukan jalan yang benar.","Anak menyelesaikan satu labirin mudah-menengah dengan jalur lebar dan satu solusi jelas.","large maze occupying the main activity area"],
+    ["Pattern Recognition","urutan objek bertema","mengenali pola","Lanjutkan Polanya","Pilih gambar yang melanjutkan pola.","Anak melengkapi pola AB, AAB, atau ABC sederhana menggunakan objek tema.","clear pattern sequence and answer choices"],
+    ["Sequencing","3–4 gambar bertema","urutan logis","Urutkan Ceritanya","Beri urutan dari awal sampai akhir.","Anak mengurutkan 3–4 gambar berdasarkan proses atau urutan logis sederhana.","large numbered sequencing slots"],
+    ["Observation","ilustrasi tema","ketelitian visual","Ayo Mengamati","Temukan benda yang diminta pada gambar.","Anak mengamati adegan lalu menemukan beberapa target visual yang jelas.","large uncluttered observation scene"],
+    ["Spot the Difference","dua adegan sederhana","observasi dan perhatian","Temukan Perbedaannya","Temukan perbedaan pada dua gambar.","Anak membandingkan dua adegan sederhana dan menemukan 3–5 perbedaan besar.","two large side-by-side scenes"]
+  ],
+  "5–6 tahun": [
+    ["Pattern Recognition","objek bertema","logika pola","Lengkapi Polanya","Pilih gambar yang paling tepat untuk melanjutkan pola.","Anak melengkapi pola visual tingkat mudah-menengah menggunakan objek tema.","clear pattern rows and answer area"],
+    ["Counting","objek bertema","numerasi 1–20","Hitung dengan Teliti","Hitung objek dan tulis atau pilih jawabannya.","Anak menghitung kelompok hingga 20 dan menentukan angka yang benar.","ample space for counting and answers"],
+    ["Sequencing","gambar proses bertema","logika urutan","Susun Urutannya","Urutkan gambar dari awal sampai akhir.","Anak mengurutkan 4 gambar berdasarkan proses atau kejadian logis.","four large sequencing cards"],
+    ["Picture Puzzle","potongan gambar tema","pemecahan masalah visual","Lengkapi Gambar","Pilih potongan yang melengkapi gambar.","Anak memilih potongan gambar yang tepat untuk melengkapi ilustrasi utama.","large puzzle frame and answer pieces"],
+    ["Alphabet","huruf dan objek tema","literasi awal","Cari Hurufnya","Temukan atau cocokkan huruf yang sesuai.","Anak mencocokkan huruf awal dengan objek bertema yang familiar.","large letters and object cards"],
+    ["Observation","adegan bertema","perhatian dan detail","Detektif Cilik","Amati gambar dan jawab tantangan visual.","Anak menemukan target tertentu berdasarkan bentuk, jumlah, atau posisi.","large observation scene with clear targets"]
+  ],
+  "6–7 tahun": [
+    ["Simple Addition","objek bertema","penjumlahan dasar","Ayo Menjumlah","Hitung lalu selesaikan penjumlahan.","Anak menggunakan kelompok objek tema untuk menyelesaikan penjumlahan satu digit.","clear equation areas with visual counters"],
+    ["Simple Subtraction","objek bertema","pengurangan dasar","Ayo Mengurangi","Hitung lalu selesaikan pengurangan.","Anak menggunakan ilustrasi objek tema untuk menyelesaikan pengurangan sederhana.","clear visual subtraction groups"],
+    ["Alphabet & Words","kata sederhana tema","literasi dan kosakata","Lengkapi Katanya","Lengkapi huruf yang hilang pada kata.","Anak mengisi satu huruf yang hilang pada beberapa kata sederhana bertema.","large readable word slots"],
+    ["Logic","objek bertema","penalaran sederhana","Pilih yang Paling Tepat","Amati petunjuk lalu pilih jawaban yang benar.","Anak menyelesaikan satu tantangan logika visual sederhana berbasis klasifikasi atau hubungan.","large logic cards and answer choices"],
+    ["Visual Reasoning","gambar bertema","penalaran visual","Cari Jawaban Tepat","Pilih gambar yang melengkapi hubungan visual.","Anak memilih gambar yang paling sesuai berdasarkan pola atau hubungan.","clean visual reasoning grid"]
+  ],
+  "7+ tahun": [
+    ["Word Search","kosakata bertema","kosakata dan fokus","Cari Kata","Temukan kata-kata bertema pada kotak huruf.","Anak mencari 5–8 kata tema dalam word search sederhana dan jelas.","large letter grid with word list"],
+    ["Logic","simbol dan objek tema","penalaran logis","Tantangan Logika","Gunakan petunjuk untuk menentukan jawaban.","Anak memecahkan satu teka-teki logika visual tingkat dasar-menengah.","structured logic grid and answer area"],
+    ["Arithmetic","angka dan konteks tema","operasi hitung","Hitung dan Jawab","Selesaikan soal hitung yang tersedia.","Anak mengerjakan operasi hitung sederhana yang dibungkus dalam konteks visual tema.","clear problem blocks with writing space"],
+    ["Categorization","objek bertema","klasifikasi dan konsep","Kelompokkan dengan Benar","Kelompokkan objek sesuai kategorinya.","Anak mengelompokkan beberapa objek ke kategori yang tepat berdasarkan ciri atau fungsi.","multiple clear category zones"],
+    ["Visual Reasoning","pola visual bertema","problem solving","Pecahkan Polanya","Pilih bagian yang melengkapi pola.","Anak menyelesaikan pola visual atau analogi gambar tingkat dasar-menengah.","large reasoning grid and distinct options"]
+  ]
+};
+
+function value(id){ return $(id).value.trim(); }
+function selectedStyle(){ const v=value('visualStyle'); return v==='Gaya Sendiri' ? value('customStyle') : v; }
+function selectedAge(){ const v=value('age'); return v==='Isi sendiri' ? value('customAge') : v; }
+function ageBand(age){
+  const n=parseFloat(String(age).replace(',','.').replace(/[^0-9.]/g,''));
+  if(Number.isNaN(n)) return '4–5 tahun';
+  if(n < 3) return '2–3 tahun';
+  if(n < 4) return '3–4 tahun';
+  if(n < 5) return '4–5 tahun';
+  if(n < 6) return '5–6 tahun';
+  if(n < 7) return '6–7 tahun';
+  return '7+ tahun';
+}
+function visualDNA(){ const style=selectedStyle(); return style + '. Maintain the same visual identity, colors, typography, rendering, lighting, shadows, proportions, and illustration quality across the workbook.'; }
+function fill(template, map){
+  let out = template;
+  Object.entries(map).forEach(([k,v]) => out = out.split(`[${k}]`).join(v));
+  return out;
+}
+function esc(s){ return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c])); }
+function toast(msg='Tersalin'){ const t=$('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1600); }
+
+function buildPlan(){
+  const theme=value('theme'), age=selectedAge(), count=Number(value('pages'));
+  if(!theme){alert('Isi Tema terlebih dahulu.');$('theme').focus();return;}
+  if(value('visualStyle')==='Gaya Sendiri' && !selectedStyle()){alert('Isi Gaya Visual sendiri terlebih dahulu.');$('customStyle').focus();return;}
+  if(value('age')==='Isi sendiri' && !selectedAge()){alert('Isi Usia Anak terlebih dahulu.');$('customAge').focus();return;}
+  if(!count || count<3){alert('Jumlah halaman minimal 3.');$('pages').focus();return;}
+  const pool = activityData[ageBand(age)] || activityData['4–5 tahun'];
+  const focusEl = $('learningFocus'); const focus = focusEl ? focusEl.value.trim() : '';
+  const plan=[
+    {page:1,type:'Cover Depan',title:`Cover Depan — ${theme}`,meta:'Premium commercial children’s educational workbook cover.'},
+    {page:2,type:'Cover Belakang',title:`Cover Belakang — ${theme}`,meta:'Pendamping visual langsung dari cover depan; bukan halaman aktivitas.'}
+  ];
+  for(let i=3;i<=count;i++){
+    const a=pool[(i-3)%pool.length];
+    const learning = focus ? `${a[2]}; fokus tambahan: ${focus}` : a[2];
+    plan.push({page:i,type:a[0],title:a[4],meta:`${a[0]} · ${learning}`,data:{...Object.fromEntries(['activity','mainObject','learningGoal','title','instruction','mechanic','interaction'].map((k,idx)=>[k,a[idx]])),learningGoal:learning}});
+  }
+  state.plan=plan;
+  renderPlan();
+  $('emptyState').classList.add('hidden');$('planArea').classList.remove('hidden');
+  $('promptSection').classList.add('hidden');state.prompts=[];
+}
+
+function renderPlan(){
+  $('planList').innerHTML = state.plan.map(p=>`<div class="plan-item"><div class="num">${p.page}</div><div><div class="plan-title">${esc(p.title)}</div><div class="plan-meta">${esc(p.meta)}</div></div></div>`).join('');
+}
+
+function makePrompts(){
+  if(!state.plan.length) return;
+  const theme=value('theme'), age=selectedAge(), style=visualDNA();
+  const mainTitle='MY ACTIVITY WORKBOOK';
+  const themeTitle=theme.toUpperCase();
+  const desc=`Workbook aktivitas anak bertema ${theme} yang dirancang untuk pengalaman belajar menyenangkan, visual, dan sesuai usia ${age}.`;
+  const prompts=state.plan.map(p=>{
+    if(p.page===1) return fill(FRONT_TEMPLATE,{'THEME':theme,'VISUAL STYLE':style,'AGE':age,'MAIN TITLE':mainTitle,'THEME TITLE':themeTitle});
+    if(p.page===2) return fill(BACK_TEMPLATE,{'THEME':theme,'VISUAL STYLE':style,'AGE':age,'MAIN TITLE':mainTitle,'THEME TITLE':themeTitle,'SHORT WORKBOOK DESCRIPTION':desc});
+    return fill(WORKSHEET_TEMPLATE,{
+      'THEME':theme,'VISUAL STYLE':style,'AGE':age,'PAGE NUMBER':String(p.page),
+      'ACTIVITY':p.data.activity,'MAIN OBJECT':`${p.data.mainObject} related to ${theme}`,
+      'LEARNING GOAL':p.data.learningGoal,'ACTIVITY TITLE':p.data.title,'INSTRUCTION':p.data.instruction,
+      'DESCRIBE EXACTLY WHAT THE CHILD MUST DO':p.data.mechanic,
+      'ACTIVITY INTERACTION':p.data.interaction
+    });
+  });
+  state.prompts=prompts;
+  $('prompts').innerHTML=prompts.map((pr,i)=>`<article class="prompt-card"><div class="prompt-head"><strong>Halaman ${i+1} — ${esc(state.plan[i].type)}</strong><div class="prompt-actions"><button class="mini" onclick="copyPrompt(${i})">Copy</button></div></div><div class="prompt-body">${esc(pr)}</div></article>`).join('');
+  $('promptSection').classList.remove('hidden');
+  $('promptSection').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+window.copyPrompt = async i => { await navigator.clipboard.writeText(state.prompts[i]); toast('Prompt tersalin'); };
+function allPromptText(){return state.prompts.map((p,i)=>`============================================================\nHALAMAN ${i+1} — ${state.plan[i].type.toUpperCase()}\n============================================================\n\n${p}`).join('\n\n\n');}
+function planText(){return `# Rencana Workbook — ${value('theme')}\n\n`+state.plan.map(p=>`${p.page}. ${p.title}\n   ${p.meta}`).join('\n\n')+'\n\nSilakan cek daftar halaman di atas. Jika sudah sesuai, ketik "Setuju" untuk melanjutkan ke prompt gambar.';}
+function download(filename,text,type='text/plain'){const b=new Blob([text],{type});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download=filename;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(u);}
+
+$('visualStyle').addEventListener('change',()=>{
+  $('customStyleWrap').classList.toggle('hidden', value('visualStyle')!=='Gaya Sendiri');
+  if(value('visualStyle')==='Gaya Sendiri') $('customStyle').focus();
+});
+$('age').addEventListener('change',()=>{
+  $('customAgeWrap').classList.toggle('hidden', value('age')!=='Isi sendiri');
+  if(value('age')==='Isi sendiri') $('customAge').focus();
+});
+
+$('generatePlan').addEventListener('click',buildPlan);
+$('approveBtn').addEventListener('click',makePrompts);
+$('copyAllBtn').addEventListener('click',async()=>{if(!state.prompts.length)return;await navigator.clipboard.writeText(allPromptText());toast('Semua prompt tersalin');});
+$('downloadTxtBtn').addEventListener('click',()=>state.prompts.length&&download('worksheet-activity-prompts.txt',allPromptText()));
+$('downloadMdBtn').addEventListener('click',()=>state.prompts.length&&download('worksheet-activity-prompts.md',allPromptText(),'text/markdown'));
+$('downloadPlanBtn').addEventListener('click',()=>state.plan.length&&download('rencana-workbook.txt',planText()));
+$('resetBtn').addEventListener('click',()=>{ $('theme').value=''; $('pages').value=10; $('visualStyle').selectedIndex=0; $('customStyle').value=''; $('age').value='3–4 tahun'; $('customAge').value=''; $('customStyleWrap').classList.add('hidden'); $('customAgeWrap').classList.add('hidden'); state.plan=[]; state.prompts=[]; $('planArea').classList.add('hidden'); $('emptyState').classList.remove('hidden'); $('promptSection').classList.add('hidden'); window.scrollTo({top:0,behavior:'smooth'}); });
+</script>
+</body>
+</html>
